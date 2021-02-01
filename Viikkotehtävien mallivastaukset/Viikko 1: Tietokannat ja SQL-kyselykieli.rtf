@@ -1,0 +1,122 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2577
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fmodern\fcharset0 CourierNewPSMT;\f2\froman\fcharset0 Times-Roman;
+\f3\fnil\fcharset0 TrebuchetMS;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww28600\viewh17440\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+Teht\'e4v\'e4 1 Ratkaisu \
+\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 CREATE TABLE pet ( name VARCHAR(20), owner VARCHAR(20), species VARCHAR(20), sex CHAR(1), birth DATE, death DATE);\'a0
+\f2 \uc0\u8232 
+\f1 \'a0\'a0
+\f2 \uc0\u8232 
+\f1 \'a0\'a0
+\f2 \uc0\u8232 
+\f1 INSERT INTO pet VALUES ('Puffball','Diane','hamster','f','1999-03-30',NULL);\'a0
+\f2 \uc0\u8232 
+\f1 INSERT INTO pet VALUES ('Fluffy','Harold','cat','f','1993-02-04',NULL);\'a0
+\f2 \uc0\u8232 
+\f1 \'a0\'a0
+\f2 \uc0\u8232 
+\f1 jne ...
+\f2 \
+\
+Teht\'e4v\'e4 2 Ratkaisu\
+a) Poista Puffballin tiedot taulusta.\'a0\uc0\u8232 \'a0
+\f1 DELETE FROM pet WHERE name='Puffball';\'a0
+\f2 \uc0\u8232 \'a0\'a0\u8232 b) Muuta Bowserin syntym\'e4ajaksi 31.8.1989\'a0\u8232 \'a0
+\f1 UPDATE pet SET birth='1989-08-31' WHERE name='Bowser';\'a0
+\f2 \uc0\u8232 \'a0\'a0\u8232 c) Chirpy on kuollut 15.9.2000. Lis\'e4\'e4 t\'e4m\'e4 tieto tauluun.\'a0\u8232 \'a0
+\f1 UPDATE pet SET death='2000-09-15' WHERE name='Chirpy';\'a0
+\f2 \uc0\u8232 \'a0\'a0\u8232 d) Tulosta kaikki lemmikit, jotka ovat syntyneet 1990-luvulla. (Tulosta kaikki tietueen tiedot)\'a0\u8232 
+\f1 SELECT * FROM pet WHERE birth>'1989-12-31' AND birth<'2000-01-01';\'a0
+\f2 \uc0\u8232 \'a0\'a0\u8232 e) Tulosta kaikki miespuoliset koirat. (Tulosta kaikki tietueen tiedot)\'a0\u8232 
+\f1 SELECT * FROM pet WHERE sex='m' AND species='dog';\'a0
+\f2 \uc0\u8232 \'a0\'a0\u8232 f) Tulosta ainoastaan kaikkien miespuolisten koirien nimet.\'a0\u8232 \'a0
+\f1 SELECT name FROM pet WHERE sex='m' AND species='dog';\'a0
+\f2 \uc0\u8232 \'a0\'a0\u8232 \'a0\'a0\u8232 g) Tulosta kaikkien miespuolisten koirien nimi ja omistajan nimi.\'a0\u8232 
+\f1 SELECT name,owner FROM pet WHERE sex='m' AND species='dog';\'a0
+\f2 \uc0\u8232 
+\f1 \'a0\'a0
+\f2 \
+Teht\'e4v\'e4 3 Ratkaisu \
+\pard\pardeftab720\partightenfactor0
+\cf2 a) Mink\'e4 nimisi\'e4 omistajia taulussa on ? Tulosta omistajan nimi vain kerran.\'a0\'a0\'a0\
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf2 SELECT DISTINCT owner FROM pet;\'a0
+\f2 \
+\'a0\'a0\'a0\
+b) Tulosta lemmikkien nimet aakkosj\'e4rjestyksess\'e4.\'a0\
+
+\f1 SELECT name FROM pet ORDER BY name;\'a0
+\f2 \
+\'a0\
+c) Tulosta kaikki elossa olevat lemmikit.\'a0\
+
+\f1 select name from pet where death IS NULL;\'a0
+\f2 \
+\'a0\'a0\
+d) Tulosta kaikki omistajat, joiden nimi alkaa kirjaimella H.\'a0\'a0\'a0\
+
+\f1 SELECT name FROM pet WHERE name LIKE 'H%';\'a0
+\f2 \
+\'a0\'a0\
+e) Tulosta kaikki lemmikit, joiden nimess\'e4 esiintyy kirjaimet ff.\'a0\
+
+\f1 SELECT name FROM pet WHERE name LIKE '%ff%';\'a0
+\f2 \
+\'a0\'a0\'a0\
+f) Tulosta kaikki lemmikit, joiden nimess\'e4 on 4 kirjainta.\'a0\
+\'a0
+\f1 SELECT name FROM pet WHERE name LIKE '____';\'a0\
+\
+Teht\'e4v\'e4 4 Ratkaisu\
+\
+\pard\pardeftab720\sa240\partightenfactor0
+\cf2 a) SELECT dept_name AS Osastot from departments;\'a0
+\f2 \uc0\u8232 
+\f3 tai yksinkertaisemmin\'a0
+\f2 \uc0\u8232 
+\f1 a) SELECT * FROM departments;\'a0
+\f2 \uc0\u8232 
+\f1 \'a0\'a0
+\f2 \uc0\u8232 
+\f1 b) SELECT DISTINCT title FROM titles;\'a0
+\f2 \uc0\u8232 
+\f1 \'a0\'a0
+\f2 \uc0\u8232 
+\f1 c) SELECT MIN(salary) FROM salaries;\'a0
+\f2 \uc0\u8232 
+\f1 SELECT MAX(salary) FROM salaries;\'a0
+\f2 \uc0\u8232 
+\f1 \'a0\'a0
+\f2 \uc0\u8232 
+\f1 d) SELECT AVG(salary) FROM salaries;\'a0
+\f2 \uc0\u8232 
+\f1 \'a0\'a0
+\f2 \uc0\u8232 
+\f1 e) SELECT * FROM employees WHERE last_name='Facello';\'a0
+\f2 \uc0\u8232 
+\f3 V\'e4h\'e4n fiinimpi versio:\'a0
+\f2 \uc0\u8232 
+\f1 SELECT first_name AS Etunimi, last_name AS Sukunimi FROM employees WHERE last_name='Facello';\'a0
+\f2 \uc0\u8232 
+\f1 \'a0\'a0
+\f2 \uc0\u8232 
+\f1 f) SELECT COUNT(*) from employees where birth_date BETWEEN '1950-1-1' AND '1959-12-31';\'a0
+\f2 \uc0\u8232 
+\f3 TAI
+\f1  SELECT COUNT(*) from employees where birth_date > '1950-1-1' AND birth_date < '1960-1-1';\'a0
+\f2 \uc0\u8232 
+\f1 \'a0\'a0
+\f2 \uc0\u8232 
+\f1 g) SELECT gender AS Sukupuoli,count(*) AS KPL FROM employees GROUP BY gender;
+\f2 \
+}

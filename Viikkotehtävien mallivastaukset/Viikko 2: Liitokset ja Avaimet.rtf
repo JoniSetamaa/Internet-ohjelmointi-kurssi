@@ -1,0 +1,217 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2577
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fmodern\fcharset0 CourierNewPSMT;\f2\froman\fcharset0 Times-Roman;
+\f3\froman\fcharset0 Times-Bold;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww28600\viewh17440\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+Teht\'e4v\'e4 5 Ratkaisu\
+\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 mysql>\'a0CREATE\'a0TABLE\'a0owner ( first_name\'a0varchar(255),last_name\'a0varchar(255),\'a0address\'a0varchar(255),ownerID\'a0int\'a0PRIMARY KEY AUTO_INCREMENT );
+\f2 \
+\uc0\u8232 
+\f1\fs20 \'a0
+\fs24 mysql> alter table pet drop column owner;\'a0
+\f2 \uc0\u8232 
+\f1 \'a0mysql> alter table pet add column petID int primary key auto_increment;\'a0
+\f2 \uc0\u8232 
+\f1 \'a0mysql> alter table pet add column ownerID int;\'a0
+\f2 \uc0\u8232 
+\f1 \'a0mysql> alter table pet add constraint foreign key(ownerID) references owner(ownerID);\'a0
+\f2 \uc0\u8232 \'a0\'a0\u8232 
+\f1 \'a0
+\fs20 mysql> desc pet;\'a0
+\f2\fs24 \uc0\u8232 
+\f1\fs20 \'a0+---------+-------------+------+-----+---------+----------------+\'a0
+\f2\fs24 \uc0\u8232 
+\f1\fs20 \'a0| Field | Type | Null | Key | Default | Extra |\'a0
+\f2\fs24 \uc0\u8232 
+\f1\fs20 \'a0+---------+-------------+------+-----+---------+----------------+\'a0
+\f2\fs24 \uc0\u8232 
+\f1\fs20 \'a0| name | varchar(20) | YES | | NULL | |\'a0
+\f2\fs24 \uc0\u8232 
+\f1\fs20 \'a0| species | varchar(20) | YES | | NULL | |\'a0
+\f2\fs24 \uc0\u8232 
+\f1\fs20 \'a0| sex | char(1) | YES | | NULL | |\'a0
+\f2\fs24 \uc0\u8232 
+\f1\fs20 \'a0| birth | date | YES | | NULL | |\'a0
+\f2\fs24 \uc0\u8232 
+\f1\fs20 \'a0| death | date | YES | | NULL | |\'a0
+\f2\fs24 \uc0\u8232 
+\f1\fs20 \'a0| petID | int(11) | NO | PRI | NULL | auto_increment |\'a0
+\f2\fs24 \uc0\u8232 
+\f1\fs20 \'a0| ownerID | int(11) | YES | MUL | NULL | |\'a0
+\f2\fs24 \uc0\u8232 
+\f1\fs20 \'a0+---------+-------------+------+-----+---------+----------------+\'a0
+\f2\fs24 \uc0\u8232 \'a0\u8232 
+\f1\fs20 \'a0mysql> desc owner;\'a0
+\f2\fs24 \uc0\u8232 
+\f1\fs20 \'a0+------------+--------------+------+-----+---------+----------------+\'a0
+\f2\fs24 \uc0\u8232 
+\f1\fs20 \'a0| Field | Type | Null | Key | Default | Extra |\'a0
+\f2\fs24 \uc0\u8232 
+\f1\fs20 \'a0+------------+--------------+------+-----+---------+----------------+\'a0
+\f2\fs24 \uc0\u8232 
+\f1\fs20 \'a0| first_name | varchar(255) | YES | | NULL | |\'a0
+\f2\fs24 \uc0\u8232 
+\f1\fs20 \'a0| last_name | varchar(255) | YES | | NULL | |\'a0
+\f2\fs24 \uc0\u8232 
+\f1\fs20 \'a0| address | varchar(255) | YES | | NULL | |\'a0
+\f2\fs24 \uc0\u8232 
+\f1\fs20 \'a0| ownerID | int(11) | NO | PRI | NULL | auto_increment |\'a0
+\f2\fs24 \uc0\u8232 
+\f1\fs20 \'a0+------------+--------------+------+-----+---------+----------------+\'a0
+\f2\fs24 \uc0\u8232 \u8232 \'a0Omistajien lis\'e4\'e4minen\'a0\u8232 \'a0\'a0\u8232 \'a0
+\f1 mysql> insert into owner values ('James','Bond','Osoite1',NULL);\'a0
+\f2 \uc0\u8232 \'a0jne..\'a0\u8232 \'a0\'a0\u8232 \'a0
+\f1 mysql> select * from owner;\'a0
+\f2 \uc0\u8232 
+\f1 \'a0+------------+-----------+----------+---------+\'a0
+\f2 \uc0\u8232 
+\f1 \'a0| first_name | last_name | address | ownerID |\'a0
+\f2 \uc0\u8232 
+\f1 \'a0+------------+-----------+----------+---------+\'a0
+\f2 \uc0\u8232 
+\f1 \'a0| James | Bond | Osoite1 | 1 |\'a0
+\f2 \uc0\u8232 
+\f1 \'a0| Conan | Obrien | Osoite2 | 2 |\'a0
+\f2 \uc0\u8232 
+\f1 \'a0| Kokki | Kolmonen | Osoite4 | 3 |\'a0
+\f2 \uc0\u8232 
+\f1 \'a0| Neiti | Aika | Osoite4a | 4 |\'a0
+\f2 \uc0\u8232 
+\f1 \'a0+------------+-----------+----------+---------+\'a0
+\f2 \uc0\u8232 \'a0\'a0\u8232 \'a0Omistajat lemmikeille.\'a0\u8232 \'a0\'a0\u8232 \'a0
+\f1 mysql> update pet set ownerID=1 where name="Fang"; \uc0\u8232 
+\f2 \
+\
+
+\f1 jne...
+\f2 \
+\
+Teht\'e4v\'e4 6 Ratkaisu\
+\
+\pard\pardeftab720\partightenfactor0
+\cf2 a) Tulosta kymmenen aakkosj\'e4rjestyksess\'e4 ensimm\'e4isen ty\'f6ntekij\'e4n tiedot sukunimen mukaan lajiteltuna.\'a0\
+SELECT * FROM employees ORDER BY last_name LIMIT 10;\'a0\
+\'a0\'a0\
+\'a0\'a0\
+b) Sama kuten edell\'e4, mutta sukunimen JA etunimen mukaan lajiteltuna.\'a0\
+SELECT * FROM employees ORDER BY last_name, first_name LIMIT 10;\'a0\
+\'a0\'a0\
+\'a0\'a0\
+c) Tulosta viiden viimeksi palkatun ty\'f6ntekij\'e4n tiedot.\'a0\
+SELECT * FROM employees ORDER BY hire_date DESC LIMIT 5;\'a0\
+\'a0\'a0\
+\'a0\'a0\
+d) Kenell\'e4 on suurin palkka ?\'a0\
+\pard\pardeftab720\partightenfactor0
+
+\f3\b \cf2 Ratkaisu1:\'a0
+\f2\b0 \
+SELECT first_name,last_name,salary FROM employees JOIN salaries\'a0\
+ON employees.emp_no = salaries.emp_no\'a0\
+ORDER BY salary DESC LIMIT 1;\'a0\
+\
+
+\f3\b Ratkaisu2:\'a0
+\f2\b0 \
+SELECT first_name,last_name,salary FROM employees JOIN salaries\'a0\
+ON employees.emp_no = salaries.emp_no\'a0\
+WHERE salary = (SELECT MAX(salary) FROM salaries);\'a0\
+\'a0\'a0\
+Ratkaisu2:ssa haku kest\'e4\'e4 puolet Ratkaisun 1 hakuajasta.\'a0\
+Ratkaisussa 1 lajitellaan salary-kentt\'e4 suuruusj\'e4rjestykseen, mik\'e4 on laskennallisesti raskasta.\'a0\
+Ratkaisussa 2 ei tarvitse lajitella, vaan ainoastaan hakea suurin palkka.\'a0\
+\'a0\'a0\
+\'a0\'a0\
+e) Kenell\'e4 on pienin palkka ?\'a0\
+Ks. edell\'e4 MAX -> MIN\'a0\
+\'a0\'a0\
+\'a0\'a0\
+f) Tulosta ty\'f6ntekij\'e4t, jotka ansaitsevat yli 150000.\'a0\
+
+\f3\b Ratkaisu 1:\'a0
+\f2\b0 \
+SELECT first_name, last_name, salary FROM employees e JOIN salaries s ON e.emp_no=s.emp_no WHERE salary > 150000 ORDER BY salary DESC;\'a0\
+\'a0\'a0\
+
+\f3\b Ratkaisu 2
+\f2\b0 , jossa otetaan viimeisin palkka kultakin ty\'f6ntekij\'e4lt\'e4 (to_date-kentt\'e4)\'a0\
+\'a0SELECT first_name, last_name, salary FROM employees e JOIN salaries s ON e.emp_no=s.emp_no WHERE salary > 150000 AND to_date='9999-01-01' ORDER BY salary DESC;\'a0\
+\'a0\'a0\
+HUOM: Employees-tietokannassa on koko ty\'f6ntekij\'e4n palkkahistoria. Siksi ty\'f6ntekij\'e4lle l\'f6ytyy yleens\'e4 monta eri palkkaa.\'a0\
+from_date ja to_date kent\'e4t sis\'e4lt\'e4v\'e4t tiedon, mist\'e4 p\'e4iv\'e4m\'e4\'e4r\'e4st\'e4 mihin asti ty\'f6ntekij\'e4ll\'e4 on ollut kyseinen palkka.\'a0\
+to_date kent\'e4n arvo '9999-01-01' tarkoittaa nykyist\'e4 palkkaa.\'a0\
+\'a0\'a0\
+\'a0\'a0\
+g) Kuinka monta ty\'f6ntekij\'e4\'e4 ty\'f6skentelee myynniss\'e4 (Sales) ? Ent\'e4 markkinoinnissa (Marketing) ?\'a0\
+\'a0\'a0\
+Ratkaisussa huomioidaan vain t\'e4ll\'e4 hetkell\'e4 t\'f6iss\'e4 olevat (to_date)\'a0\
+select count(*) from employees join dept_emp on employees.emp_no=dept_emp.emp_no join departments on dept_emp.dept_no=departments.dept_no where dept_name='Sales' AND to_date='9999-01-01';\'a0\
+\'a0\'a0\
+HUOM: Samalla lailla kuin palkoissa, dept_emp-kentt\'e4 sis\'e4lt\'e4\'e4 tiedon kaikista osastoista, joissa ty\'f6ntekij\'e4 on ty\'f6skennellyt.\'a0\
+to_date-kent\'e4n arvo '9999-01-01' tarkoittaa t\'e4m\'e4nhetkist\'e4 osastoa.\'a0\
+\'a0\'a0\
+\'a0\'a0\
+h) Tulosta kaikkien osastonjohtajien (Department Managers) etunimi, sukunimi ja osasto, jolla ty\'f6skentelee.\'a0\
+\'a0\'a0\
+SELECT first_name AS Etunimi, last_name AS Sukunimi, dept_name AS Osasto FROM employees e JOIN dept_manager dm ON e.emp_no=dm.emp_no JOIN departments d ON dm.dept_no=d.dept_no;\'a0\
+\'a0\'a0\
+\'a0\'a0\
+i) Mik\'e4 on myynniss\'e4 ty\'f6skentelevien keskipalkka ? Ent\'e4 markkinoinnissa ?\'a0\
+\'a0\'a0\
+SELECT AVG(salary) FROM salaries JOIN dept_emp ON salaries.emp_no=dept_emp.emp_no JOIN departments ON dept_emp.dept_no=departments.dept_no WHERE dept_name='Sales' AND dept_emp.to_date='9999-01-01';\'a0\
+\
+\
+Teht\'e4v\'e4 7 Ratkaisu\
+\
+a) Tulosta DVD-elokuvien kielet (language) aakkosj\'e4rjestyksess\'e4\'a0\
+select * from language order by name;\'a0\
+\'a0\'a0\
+b) Tulosta kaikkien niiden n\'e4yttelij\'f6iden elokuvat, joiden sukunimi on Temple.\'a0\
+select first_name,last_name,title from actor\'a0\
+join film_actor on actor.actor_id = film_actor.actor_id\'a0\
+join film on film.film_id = film_actor.film_id where last_name='Temple';\'a0\
+\'a0\'a0\
+c) Tulosta elokuvassa "Ghost Groundhog" n\'e4ytelleet n\'e4yttelij\'e4t.\'a0\
+select first_name,last_name,title from actor\'a0\
+join film_actor on actor.actor_id = film_actor.actor_id\'a0\
+join film on film.film_id = film_actor.film_id where title='Ghost Groundhog';\'a0\
+\'a0\'a0\
+d) Montako kauhuelokuvaa tietokannassa on ?\'a0\
+SELECT COUNT(*) FROM category c\'a0\
+JOIN film_category fc ON c.category_id = fc.category_id WHERE name='Horror';\'a0\
+\'a0\'a0\
+e) Tulosta kaikki kauhuelokuvat.\'a0\
+SELECT title FROM category c\'a0\
+JOIN film_category fc ON c.category_id = fc.category_id\'a0\
+JOIN film f ON f.film_id = fc.film_id WHERE name='Horror';\'a0\
+\
+\
+Teht\'e4v\'e4 8 Ratkaisu\
+\
+a) Tulosta n\'e4yttelij\'e4t, joiden nimess\'e4 esiintyy merkkijono "SON" tulostettuna etunimen mukaan\'a0aakkosj\'e4rjestyksess\'e4.\'a0\
+select first_name,last_name from actor where last_name LIKE '%SON%' OR first_name LIKE '%SON%'\'a0\
+order by first_name;\'a0\
+\'a0\'a0\
+b) Kuinka monen elokuvan kuvauksessa (description) esiintyy sanat "Crocodile" ja "Shark" ?\'a0\
+\'a0select count(*) from film where description like '%Crocodile%' AND description like '%Shark%';\'a0\
+\'a0\'a0\
+c) Tulosta niiden n\'e4yttelij\'f6iden etu- ja sukunimi, jotka ovat n\'e4ytelleet elokuvassa, jonka kuvauksessa\'a0(description) mainitaan sanat "Crocodile" JA "Shark". Tulosta lis\'e4ksi elokuvan ilmestymisvuosi. Lajittele\'a0n\'e4yttelij\'e4n sukunimen mukaan.\'a0\
+\'a0\'a0\
+select first_name,last_name,release_year from actor\'a0\
+join film_actor on actor.actor_id = film_actor.actor_id\'a0\
+join film on film.film_id = film_actor.film_id\'a0\
+where description like '%Crocodile%' AND description like '%Shark%' order by last_name;\'a0\
+\'a0\'a0\
+\'a0\'a0\
+d) Etsi elokuvakategoriat, joissa on filmej\'e4 55 - 65 kappaletta. Tulosta kyseisten kategorioiden nimet ja filmien\'a0lukum\'e4\'e4r\'e4t lajiteltuna lukum\'e4\'e4r\'e4n mukaan.,\'a0\
+\'a0SELECT name,COUNT(*) AS lkm FROM category c JOIN film_category fc ON c.category_id=fc.category_id\'a0\
+GROUP BY name HAVING lkm BETWEEN 55 AND 65 ORDER BY lkm;\'a0\
+}
