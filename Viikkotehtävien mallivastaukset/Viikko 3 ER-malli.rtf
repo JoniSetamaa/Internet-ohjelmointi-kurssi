@@ -1,0 +1,486 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2578
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fmodern\fcharset0 CourierNewPSMT;\f2\froman\fcharset0 Times-Roman;
+\f3\fmodern\fcharset0 CourierNewPS-BoldMT;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww28600\viewh18000\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Teht\'e4v\'e4 9 Ratkaisu\
+\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\fs20 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 CREATE TABLE Opintojakso (\'a0
+\f2\fs24 \uc0\u8232 
+\f1\fs20 \'a0\'a0 idOpintojakso INT PRIMARY KEY AUTO_INCREMENT,\'a0
+\f2\fs24 \uc0\u8232 
+\f1\fs20 \'a0\'a0 koodi VARCHAR(20) NOT NULL,\'a0
+\f2\fs24 \uc0\u8232 
+\f1\fs20 \'a0\'a0 laajuus INT NOT NULL,\'a0
+\f2\fs24 \uc0\u8232 
+\f1\fs20 \'a0\'a0 nimi VARCHAR(20) NOT NULL\'a0
+\f2\fs24 \uc0\u8232 
+\f1\fs20 );\'a0
+\f2\fs24 \uc0\u8232 \u8232 \u8232 
+\f1\fs20 CREATE TABLE Opiskelija(\'a0
+\f2\fs24 \uc0\u8232 
+\f1\fs20 \'a0\'a0 idOpiskelija INT PRIMARY KEY AUTO_INCREMENT,\'a0
+\f2\fs24 \uc0\u8232 
+\f1\fs20 \'a0\'a0 etunimi VARCHAR(20) NOT NULL,\'a0
+\f2\fs24 \uc0\u8232 
+\f1\fs20 \'a0\'a0 sukunimi VARCHAR(20) NOT NULL,\'a0
+\f2\fs24 \uc0\u8232 
+\f1\fs20 \'a0\'a0 osoite VARCHAR(20) NOT NULL,\'a0
+\f2\fs24 \uc0\u8232 
+\f1\fs20 \'a0\'a0 luokkatunnus VARCHAR(20) NOT NULL\'a0
+\f2\fs24 \uc0\u8232 
+\f1\fs20 );\'a0
+\f2\fs24 \uc0\u8232 \u8232 
+\f1\fs20 CREATE TABLE Arviointi(\'a0
+\f2\fs24 \uc0\u8232 
+\f1\fs20 \'a0\'a0 idArviointi INT PRIMARY KEY AUTO_INCREMENT,\'a0
+\f2\fs24 \uc0\u8232 
+\f1\fs20 \'a0\'a0 paivamaara DATE NOT NULL,\'a0
+\f2\fs24 \uc0\u8232 
+\f1\fs20 \'a0\'a0 arvosana TINYINT,\'a0
+\f2\fs24 \uc0\u8232 
+\f1\fs20 \'a0\'a0 idOpiskelija INT,\'a0
+\f2\fs24 \uc0\u8232 
+\f1\fs20 \'a0\'a0 idOpintojakso INT,\'a0
+\f2\fs24 \uc0\u8232 
+\f1\fs20 \'a0\'a0 FOREIGN KEY (idOpiskelija) REFERENCES Opiskelija(idOpiskelija),\'a0
+\f2\fs24 \uc0\u8232 
+\f1\fs20 \'a0\'a0 FOREIGN KEY (idOpintojakso) REFERENCES Opintojakso(idOpintojakso)\'a0
+\f2\fs24 \uc0\u8232 
+\f1\fs20 );\'a0
+\f2\fs24 \uc0\u8232 
+\f1\fs20 \'a0
+\f2\fs24 \
+
+\f1\fs20 INSERT INTO Opiskelija VALUES (NULL,'Aku','Ankka',' Ankkalinnankuja 13','TTE3SAR');
+\f2\fs24 \
+
+\f1\fs20 \'a0INSERT INTO Opiskelija VALUES (NULL,'Roope','Ankka',' Ankkalinnankuja 14','TTE4SAR');\'a0\'a0\'a0\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0INSERT INTO Opiskelija VALUES (NULL,'Mikki','Hiiri',' Ankkalinnankuja 15','TTE4SAR');\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0INSERT INTO Opintojakso VALUES(NULL,'T200201',3,'Tietokannat');\uc0\u8232 \'a0INSERT INTO Opintojakso VALUES(NULL,'T200202',3,'Olio-ohjelmointi');\u8232 \'a0INSERT INTO Opintojakso VALUES(NULL,'T200203',3,'Fysiikka 1');
+\f2\fs24 \
+
+\f1\fs20 \'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0INSERT INTO Arviointi VALUES (NULL,CURDATE(),1,1,1);
+\f2\fs24 \
+
+\f1\fs20 \'a0INSERT INTO Arviointi VALUES (NULL,CURDATE(),1,2,1);
+\f2\fs24 \
+
+\f1\fs20 \'a0mysql> SELECT etunimi,sukunimi,nimi,arvosana,paivamaara FROM Opiskelija op JOIN Arviointi a ON op.idOpiskelija=a.idOpiskelija JOIN Opintojakso o ON o.idOpintojakso=a.idOpintojakso;
+\f2\fs24 \
+Teht\'e4v\'e4 10 Ratkaisu\
+\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f3\b\fs20 \cf2 1) Tulosta kaikki opiskelijat, joilla on tietokannassa hyl\'e4tty arvosana
+\f2\b0\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\fs20 \cf2 SELECT * FROM Opiskelija o JOIN Arviointi a ON a.idOpiskelija=o.idOpiskelija WHERE Arvosana=0;
+\f2\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f3\b\fs20 \cf2 2) Tulosta kaikki Fysiikka 3-kurssin hyv\'e4ksytysti suorittaneet\'a0
+\f2\b0\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\fs20 \cf2 SELECT * FROM Opiskelija o
+\f2\fs24 \
+
+\f1\fs20 JOIN Arviointi a ON a.idOpiskelija=o.idOpiskelija\'a0
+\f2\fs24 \
+
+\f1\fs20 JOIN Opintojakso op ON op.idOpintojakso=a.idOpintojakso
+\f2\fs24 \
+
+\f1\fs20 WHERE Arvosana>0 AND Nimi='Fysiikka 3';
+\f2\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f3\b\fs20 \cf2 3) Mille kursseille Hessu on osallistunut ?
+\f2\b0\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\fs20 \cf2 SELECT Nimi FROM Opiskelija o
+\f2\fs24 \
+
+\f1\fs20 JOIN Arviointi a ON a.idOpiskelija=o.idOpiskelija
+\f2\fs24 \
+
+\f1\fs20 JOIN Opintojakso op ON op.idOpintojakso=a.idOpintojakso
+\f2\fs24 \
+
+\f1\fs20 WHERE Etunimi='Hessu';
+\f2\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f3\b\fs20 \cf2 4) Mik\'e4 on Akun opintosuoritusten keskiarvo ?
+\f2\b0\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\fs20 \cf2 SELECT AVG(Arvosana) FROM Opiskelija o
+\f2\fs24 \
+
+\f1\fs20 JOIN Arviointi a ON a.idOpiskelija=o.idOpiskelija
+\f2\fs24 \
+
+\f1\fs20 JOIN Opintojakso op ON op.idOpintojakso=a.idOpintojakso
+\f2\fs24 \
+
+\f1\fs20 WHERE Etunimi='Aku';
+\f2\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f3\b\fs20 \cf2 5) Mill\'e4 opintojaksoilla ei ole yht\'e4\'e4n suoritusmerkint\'e4\'e4 ?
+\f2\b0\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\fs20 \cf2 SELECT Nimi FROM Opintojakso o\'a0
+\f3\b LEFT JOIN
+\f1\b0 \'a0Arviointi a ON o.idOpintojakso=a.idOpintojakso WHERE Arvosana IS NULL;\
+\
+Teht\'e4v\'e4 11 Ratkaisu\
+\
+\pard\pardeftab720\partightenfactor0
+\cf2 CREATE TABLE IF NOT EXISTS `t5blaa03`.`Teos` (\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 `idTeos` INT NOT NULL,\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 `Nimi` VARCHAR(45) NOT NULL,\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 `ISBN` VARCHAR(45) NOT NULL,\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 PRIMARY KEY (`idTeos`))\'a0
+\f2\fs24 \
+
+\f1\fs20 ENGINE = InnoDB;\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0\'a0
+\f2\fs24 \
+
+\f1\fs20 USE `t5blaa03` ;\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0\'a0
+\f2\fs24 \
+
+\f1\fs20 -- -----------------------------------------------------\'a0
+\f2\fs24 \
+
+\f1\fs20 -- Table `t5blaa03`.`Asiakas`\'a0
+\f2\fs24 \
+
+\f1\fs20 -- -----------------------------------------------------\'a0
+\f2\fs24 \
+
+\f1\fs20 CREATE TABLE IF NOT EXISTS `t5blaa03`.`Asiakas` (\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 `idAsiakas` INT(11) NOT NULL AUTO_INCREMENT,\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 `Etunimi` VARCHAR(45) NOT NULL,\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 `Sukunimi` VARCHAR(45) NOT NULL,\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 `Osoite` VARCHAR(45) NULL DEFAULT NULL,\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 `Puhelinnumero` VARCHAR(45) NULL DEFAULT NULL,\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 PRIMARY KEY (`idAsiakas`))\'a0
+\f2\fs24 \
+
+\f1\fs20 ENGINE = InnoDB\'a0
+\f2\fs24 \
+
+\f1\fs20 AUTO_INCREMENT = 4\'a0
+\f2\fs24 \
+
+\f1\fs20 DEFAULT CHARACTER SET = latin1;\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0\'a0
+\f2\fs24 \
+
+\f1\fs20 -- -----------------------------------------------------\'a0
+\f2\fs24 \
+
+\f1\fs20 -- Table `t5blaa03`.`Kirja`\'a0
+\f2\fs24 \
+
+\f1\fs20 -- -----------------------------------------------------\'a0
+\f2\fs24 \
+
+\f1\fs20 CREATE TABLE IF NOT EXISTS `t5blaa03`.`Kirja` (\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 `idKirja` INT(11) NOT NULL AUTO_INCREMENT,\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 `idTeos` INT NOT NULL,\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 `Hyllypaikka` VARCHAR(45) NULL DEFAULT NULL,\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 PRIMARY KEY (`idKirja`),\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 INDEX `fk_Kirja_Teos1_idx` (`idTeos` ASC),\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 CONSTRAINT `fk_Kirja_Teos1`\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 FOREIGN KEY (`idTeos`)\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 REFERENCES `t5blaa03`.`Teos` (`idTeos`)\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 ON DELETE NO ACTION\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 ON UPDATE NO ACTION)\'a0
+\f2\fs24 \
+
+\f1\fs20 ENGINE = InnoDB\'a0
+\f2\fs24 \
+
+\f1\fs20 AUTO_INCREMENT = 8\'a0
+\f2\fs24 \
+
+\f1\fs20 DEFAULT CHARACTER SET = latin1;\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0\'a0
+\f2\fs24 \
+
+\f1\fs20 -- -----------------------------------------------------\'a0
+\f2\fs24 \
+
+\f1\fs20 -- Table `t5blaa03`.`Lainaus`\'a0
+\f2\fs24 \
+
+\f1\fs20 -- -----------------------------------------------------\'a0
+\f2\fs24 \
+
+\f1\fs20 CREATE TABLE IF NOT EXISTS `t5blaa03`.`Lainaus` (\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 `idLainaus` INT(11) NOT NULL AUTO_INCREMENT,\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 `LainausPVM` DATE NULL DEFAULT NULL,\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 `PalautusPVM` DATE NULL DEFAULT NULL,\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 `idAsiakas` INT(11) NOT NULL,\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 `idKirja` INT(11) NOT NULL,\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 `Palautettu` TINYINT(1) NULL DEFAULT NULL,\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 PRIMARY KEY (`idLainaus`),\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 INDEX `fk_Lainaus_Asiakas1_idx` (`idAsiakas` ASC),\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 INDEX `fk_Lainaus_Kirja1_idx` (`idKirja` ASC),\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 CONSTRAINT `fk_Lainaus_Asiakas1`\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 FOREIGN KEY (`idAsiakas`)\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 REFERENCES `t5blaa03`.`Asiakas` (`idAsiakas`)\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 ON DELETE NO ACTION\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 ON UPDATE NO ACTION,\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 CONSTRAINT `fk_Lainaus_Kirja1`\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 FOREIGN KEY (`idKirja`)\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 REFERENCES `t5blaa03`.`Kirja` (`idKirja`)\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 ON DELETE NO ACTION\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 ON UPDATE NO ACTION)\'a0
+\f2\fs24 \
+
+\f1\fs20 ENGINE = InnoDB\'a0
+\f2\fs24 \
+
+\f1\fs20 AUTO_INCREMENT = 2\'a0
+\f2\fs24 \
+
+\f1\fs20 DEFAULT CHARACTER SET = latin1;\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0\'a0
+\f2\fs24 \
+
+\f1\fs20 -- -----------------------------------------------------\'a0
+\f2\fs24 \
+
+\f1\fs20 -- Table `t5blaa03`.`Tekija`\'a0
+\f2\fs24 \
+
+\f1\fs20 -- -----------------------------------------------------\'a0
+\f2\fs24 \
+
+\f1\fs20 CREATE TABLE IF NOT EXISTS `t5blaa03`.`Tekija` (\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 `idTekija` INT(11) NOT NULL AUTO_INCREMENT,\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 `Etunimi` VARCHAR(45) NOT NULL,\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 `Sukunimi` VARCHAR(45) NOT NULL,\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 PRIMARY KEY (`idTekija`))\'a0
+\f2\fs24 \
+
+\f1\fs20 ENGINE = InnoDB\'a0
+\f2\fs24 \
+
+\f1\fs20 AUTO_INCREMENT = 8\'a0
+\f2\fs24 \
+
+\f1\fs20 DEFAULT CHARACTER SET = latin1;\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0\'a0
+\f2\fs24 \
+
+\f1\fs20 -- -----------------------------------------------------\'a0
+\f2\fs24 \
+
+\f1\fs20 -- Table `t5blaa03`.`Tekija_Teos`\'a0
+\f2\fs24 \
+
+\f1\fs20 -- -----------------------------------------------------\'a0
+\f2\fs24 \
+
+\f1\fs20 CREATE TABLE IF NOT EXISTS `t5blaa03`.`Tekija_Teos` (\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 `idTekija` INT(11) NOT NULL,\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 `idTeos` INT NOT NULL,\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 INDEX `fk_Tekija_has_Teos_Teos1_idx` (`idTeos` ASC),\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 INDEX `fk_Tekija_has_Teos_Tekija1_idx` (`idTekija` ASC),\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 CONSTRAINT `fk_Tekija_has_Teos_Tekija1`\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 FOREIGN KEY (`idTekija`)\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 REFERENCES `t5blaa03`.`Tekija` (`idTekija`)\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 ON DELETE NO ACTION\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 ON UPDATE NO ACTION,\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 CONSTRAINT `fk_Tekija_has_Teos_Teos1`\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 FOREIGN KEY (`idTeos`)\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 REFERENCES `t5blaa03`.`Teos` (`idTeos`)\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 ON DELETE NO ACTION\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0 ON UPDATE NO ACTION)\'a0
+\f2\fs24 \
+
+\f1\fs20 ENGINE = InnoDB\'a0
+\f2\fs24 \
+
+\f1\fs20 DEFAULT CHARACTER SET = latin1;\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0\'a0
+\f2\fs24 \
+
+\f1\fs20 \'a0\'a0
+\f2\fs24 \
+
+\f1\fs20 SET SQL_MODE=@OLD_SQL_MODE;\'a0
+\f2\fs24 \
+
+\f1\fs20 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;\'a0
+\f2\fs24 \
+
+\f1\fs20 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;\'a0
+\f2\fs24 \
+\pard\pardeftab720\sa120\partightenfactor0
+\cf2 \
+}
