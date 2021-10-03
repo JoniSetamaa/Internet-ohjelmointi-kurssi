@@ -1,0 +1,649 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2578
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\froman\fcharset0 Times-Roman;\f2\fmodern\fcharset0 CourierNewPS-BoldMT;
+\f3\froman\fcharset0 Times-Bold;\f4\fmodern\fcharset0 CourierNewPSMT;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red251\green0\blue7;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c100000\c0\c0;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Teht\'e4v\'e4 12 Ratkaisut\
+\
+\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Sy\'f6t\'e4 jokaiseen kirjastotietokannan tauluun muutama tietue.\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls1\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Ainakin kaksi samaa kirjaa (pit\'e4\'e4 tallentua eri p\'e4\'e4avaimille)\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Kirja, jossa on useampi kuin yksi tekij\'e4.\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Lainaustapahtuma, jossa asiakas on lainannut kirjan ja se on viel\'e4 lainassa.
+\f0 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f2\b \cf3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 -- Tekija-tauluun tiedot:
+\f1\b0 \cf2 \strokec2 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f2\b\fs20 \cf2 INSERT INTO Tekija VALUES(NULL,'V\'e4in\'f6','Linna');\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 INSERT INTO Tekija VALUES(NULL,'Mika','Waltari');\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 INSERT INTO Tekija VALUES(NULL,'Pekka','Himanen');\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 INSERT INTO Tekija VALUES(NULL,'Manuel','Castells');\'a0
+\f3\fs24 \uc0\u8232 
+\f1\b0 \
+
+\f2\b\fs20 mysql> SELECT * FROM Tekija;\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 +----------+---------+----------+\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 | idTekija | Etunimi | Sukunimi |\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 +----------+---------+----------+\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 | 8 | V\'e4in\'f6 | Linna |\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 | 9 | Mika | Waltari |\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 | 10 | Pekka | Himanen |\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 | 11 | Manuel | Castells |\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 +----------+---------+----------+\'a0
+\f3\fs24 \uc0\u8232 
+\f1\b0 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f2\b \cf3 \strokec3 --Teos-tauluun tiedot:
+\fs20 \cf2 \strokec2  \'a0
+\f3\fs24 \uc0\u8232 
+\f1\b0 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f2\b\fs20 \cf2 INSERT INTO Teos VALUES(NULL,'Tuntematon sotilas','asdqw');\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 INSERT INTO Teos VALUES(NULL,'Musta rakkaus','bsdqw');\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 INSERT INTO Teos VALUES(NULL,'Sinuhe egyptil\'e4inen','csdqw');\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 INSERT INTO Teos VALUES(NULL,'Turms kuolematon','dsdqw');\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 INSERT INTO Teos VALUES(NULL,'Hacker Ethics','esdqw');\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 \'a0\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 mysql> SELECT * FROM Teos;\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 +--------+----------------------+-------+\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 | idTeos | Nimi | ISBN |\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 +--------+----------------------+-------+\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 | 1 | Tuntematon sotilas | asdqw |\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 | 2 | Musta rakkaus | bsdqw |\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 | 3 | Sinuhe egyptil\'e4inen | csdqw |\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 | 4 | Turms kuolematon | dsdqw |\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 | 5 | Hacker Ethics | esdqw |\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 +--------+----------------------+-------+\'a0
+\f3\fs24 \uc0\u8232 
+\f1\b0 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f2\b \cf2 --\cf3 \strokec3 Tekija_Teos-tauluun tiedot
+\f1\b0 \cf2 \strokec2 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f2\b\fs20 \cf2 INSERT INTO Tekija_Teos VALUES(8,1);\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 INSERT INTO Tekija_Teos VALUES(8,2);\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 INSERT INTO Tekija_Teos VALUES(9,3);\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 INSERT INTO Tekija_Teos VALUES(10,5);\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 INSERT INTO Tekija_Teos VALUES(11,5);\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 INSERT INTO Tekija_Teos VALUES(11,5);\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 \'a0\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 \'a0\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 mysql> SELECT * FROM Tekija_Teos;\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 +----------+--------+\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 | idTekija | idTeos |\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 +----------+--------+\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 | 8 | 1 |\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 | 8 | 2 |\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 | 9 | 3 |\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 | 9 | 4 |\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 | 10 | 5 |\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 | 11 | 5 |\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 +----------+--------+\'a0
+\f3\fs24 \uc0\u8232 
+\f1\b0 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f2\b \cf3 \strokec3 --Asiakas-tauluun tiedot: \'a0
+\f1\b0 \cf2 \strokec2 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f2\b\fs20 \cf2 INSERT INTO Asiakas VALUES(NULL,'Aku','Ankka','Ankkalinnankuja 1','050532222');\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 INSERT INTO Asiakas VALUES(NULL,'Mikki','Hiiri','Ankkalinnankuja 2','040432222');\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 INSERT INTO Asiakas VALUES(NULL,'Hessu','Hopo','Ankkalinnankuja 3','050533333');\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 \'a0\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 mysql> SELECT * FROM Asiakas;\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 +-----------+---------+----------+-------------------+---------------+\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 | idAsiakas | Etunimi | Sukunimi | Osoite | Puhelinnumero |\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 +-----------+---------+----------+-------------------+---------------+\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 | 4 | Aku | Ankka | Ankkalinnankuja 1 | 050532222 |\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 | 5 | Mikki | Hiiri | Ankkalinnankuja 2 | 040432222 |\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 | 6 | Hessu | Hopo | Ankkalinnankuja 3 | 050533333 |\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 +-----------+---------+----------+-------------------+---------------+\'a0
+\f3\fs24 \uc0\u8232 
+\f1\b0 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f2\b \cf3 \strokec3 --Kirja-tauluun tiedot:
+\fs20 \cf2 \strokec2  \'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 INSERT INTO Kirja VALUES (NULL,5,'84.2');\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 INSERT INTO Kirja VALUES (NULL,1,'84.1');\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 INSERT INTO Kirja VALUES (NULL,1,'84.1');\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 INSERT INTO Kirja VALUES (NULL,1,'84.1');\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 INSERT INTO Kirja VALUES (NULL,2,'84.1');\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 INSERT INTO Kirja VALUES (NULL,2,'84.1');\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 INSERT INTO Kirja VALUES (NULL,3,'84.1');\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 INSERT INTO Kirja VALUES (NULL,4,'84.1');\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 \'a0\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 mysql> SELECT * FROM Kirja;\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 +---------+--------+-------------+\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 | idKirja | idTeos | Hyllypaikka |\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 +---------+--------+-------------+\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 | 19 | 5 | 84.2 |\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 | 20 | 1 | 84.1 |\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 | 21 | 1 | 84.1 |\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 | 22 | 1 | 84.1 |\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 | 23 | 2 | 84.1 |\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 | 24 | 2 | 84.1 |\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 | 25 | 3 | 84.1 |\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 | 26 | 4 | 84.1 |\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 +---------+--------+-------------+\'a0
+\f3\fs24 \uc0\u8232 
+\f1\b0 \
+
+\f2\b \cf3 \strokec3 --Lainaus-tauluun tiedot:
+\f3 \cf2 \strokec2 \uc0\u8232 
+\f2\fs20 INSERT INTO Lainaus VALUES(NULL,CURDATE(),DATE_ADD(CURDATE(),INTERVAL 30 DAY),4,19,FALSE);\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 INSERT INTO Lainaus VALUES(NULL,CURDATE(),DATE_ADD(CURDATE(),INTERVAL 30 DAY),5,20,FALSE);\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 INSERT INTO Lainaus VALUES(NULL,CURDATE(),DATE_ADD(CURDATE(),INTERVAL 30 DAY),6,21,FALSE);\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 \'a0\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 mysql> SELECT * FROM Lainaus;\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 +-----------+------------+-------------+-----------+---------+------------+\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 | idLainaus | LainausPVM | PalautusPVM | idAsiakas | idKirja | Palautettu |\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 +-----------+------------+-------------+-----------+---------+------------+\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 | 4 | 2015-09-21 | 2015-10-21 | 4 | 19 | 0 |\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 | 5 | 2015-09-21 | 2015-10-21 | 5 | 20 | 0 |\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 | 6 | 2015-08-11 | 2015-09-11 | 6 | 21 | 0 |\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 +-----------+------------+-------------+-----------+---------+------------+\'a0
+\f3\fs24 \uc0\u8232 
+\f1\b0 \
+
+\f2\b \cf3 \strokec3 --Lainassa ollut kirja palautetaan:
+\f1\b0 \cf2 \strokec2 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f2\b\fs20 \cf2 mysql> UPDATE Lainaus SET Palautettu=TRUE WHERE idLainaus=5;\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 \'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 mysql> SELECT * FROM Lainaus;\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 \'a0\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 +-----------+------------+-------------+-----------+---------+------------+\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 | idLainaus | LainausPVM | PalautusPVM | idAsiakas | idKirja | Palautettu |\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 +-----------+------------+-------------+-----------+---------+------------+\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 | 5 | 2016-02-04 | 2016-03-05 | 4 | 8 | 1 |\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 | 6 | 2016-02-04 | 2016-03-05 | 5 | 9 | 0 |\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 | 7 | 2016-02-04 | 2016-03-05 | 6 | 10 | 0 |\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 +-----------+------------+-------------+-----------+---------+------------+\'a0
+\f3\fs24 \uc0\u8232 
+\f2\fs20 3 rows in set (0.00 sec)\'a0
+\f3\fs24 \uc0\u8232 \'a0\'a0
+\f1\b0 \
+\
+Teht\'e4v\'e4 13 Ratkaisut\
+\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f4\fs20 \cf2 a) Tulostetaan kaikki tietokannassa olevat kirjat aakkosj\'e4rjestyksess\'e4.
+\f1\fs24 \
+
+\f4\fs20 CREATE VIEW `KaikkiKirjat` AS\uc0\u8232 SELECT Nimi FROM Teos t\'a0\u8232 JOIN Kirja k ON t.idTeos=k.idTeos\'a0\u8232 ORDER BY Nimi;
+\f1\fs24 \
+
+\f4\fs20 b) Tulostetaan kaikki kirjailijat aakkosj\'e4rjestyksess\'e4
+\f1\fs24 \
+
+\f4\fs20 CREATE VIEW `KaikkiKirjailijat` AS\uc0\u8232 SELECT Sukunimi,Etunimi FROM Tekija ORDER BY Sukunimi;
+\f1\fs24 \
+
+\f4\fs20 c) Tulostetaan lainassa olevat kirjat (Kirjan nimi ja asiakkaan nimi).
+\f1\fs24 \
+
+\f4\fs20 CREATE VIEW `Lainatut` AS
+\f1\fs24 \uc0\u8232 
+\f4\fs20 SELECT Nimi,Sukunimi,Etunimi,PalautusPVM FROM Teos t
+\f1\fs24 \uc0\u8232 
+\f4\fs20 JOIN Kirja k ON t.idTeos=k.idTeos
+\f1\fs24 \uc0\u8232 
+\f4\fs20 JOIN Lainaus l ON l.idKirja=k.idKirja
+\f1\fs24 \uc0\u8232 
+\f4\fs20 JOIN Asiakas a ON a.idAsiakas=l.idAsiakas
+\f1\fs24 \uc0\u8232 
+\f4\fs20 WHERE Palautettu=FALSE;
+\f1\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f2\b\fs20 \cf2 d) Tulostetaan my\'f6h\'e4ss\'e4 olevat kirjat ja lainaajat.
+\f1\b0\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f4\fs20 \cf2 CREATE VIEW `Myohassa` AS
+\f1\fs24 \uc0\u8232 
+\f4\fs20 SELECT Nimi,Sukunimi,Etunimi,PalautusPVM FROM Teos t JOIN Kirja k\'a0
+\f1\fs24 \uc0\u8232 
+\f4\fs20 ON t.idTeos=k.idTeos
+\f1\fs24 \uc0\u8232 
+\f4\fs20 JOIN Lainaus l ON l.idKirja=k.idKirja
+\f1\fs24 \uc0\u8232 
+\f4\fs20 JOIN Asiakas a ON a.idAsiakas=l.idAsiakas
+\f1\fs24 \uc0\u8232 
+\f4\fs20 WHERE PalautusPVM < CURDATE() AND Palautettu=FALSE;
+\f1\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f2\b\fs20 \cf2 e) Tulostetaan montako kappaletta eri kirjailijiden teoksia on kaikkiaan kirjaston kokoelmissa.
+\f1\b0\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f4\fs20 \cf2 CREATE VIEW `KirjailijanTeokset` AS
+\f1\fs24 \uc0\u8232 
+\f4\fs20 SELECT Sukunimi,Etunimi,COUNT(*) FROM Tekija\'a0
+\f1\fs24 \uc0\u8232 
+\f4\fs20 JOIN Tekija_Teos ON Tekija_Teos.idTekija=Tekija.idTekija\'a0
+\f1\fs24 \uc0\u8232 
+\f4\fs20 JOIN Teos ON Teos.idTeos=Tekija_Teos.idTeos GROUP BY Sukunimi;
+\f1\fs24 \
+\
+Teht\'e4v\'e4 14 Ratkaisut\
+A) Tee kirjastotietokantaan aliohjelma, joka lis\'e4\'e4 uuden teoksen\'a0ja sille tekij\'e4tiedot\
+
+\f4\fs20 CREATE PROCEDURE `LisaaTeos` (
+\f1\fs24 \uc0\u8232 
+\f4\fs20 IN En VARCHAR(45),
+\f1\fs24 \uc0\u8232 
+\f4\fs20 IN Sn VARCHAR(45),
+\f1\fs24 \uc0\u8232 
+\f4\fs20 IN Knimi VARCHAR(45),
+\f1\fs24 \uc0\u8232 
+\f4\fs20 IN isbn VARCHAR(45))
+\f1\fs24 \
+
+\f4\fs20 BEGIN
+\f1\fs24 \uc0\u8232 
+\f4\fs20 DECLARE BookID INT DEFAULT 0;
+\f1\fs24 \uc0\u8232 
+\f4\fs20 DECLARE AuthorID INT DEFAULT 0;
+\f1\fs24 \uc0\u8232 
+\f4\fs20 DECLARE TTID INT DEFAULT 0;
+\f1\fs24 \uc0\u8232 
+\f4\fs20 SELECT idTeos INTO BookID FROM Teos WHERE Nimi=Knimi;
+\f1\fs24 \
+
+\f4\fs20 IF BookID=0 THEN
+\f1\fs24 \uc0\u8232 
+\f4\fs20 \'a0 \'a0 \'a0INSERT INTO Teos VALUES(NULL,Knimi,isbn);
+\f1\fs24 \uc0\u8232 
+\f4\fs20 \'a0 \'a0 \'a0SELECT LAST_INSERT_ID() INTO BookID;\'a0
+\f1\fs24 \uc0\u8232 
+\f4\fs20 \'a0 \'a0 \'a0-- LAST_INSERT_ID on viimeisimm\'e4n lis\'e4yksen ID
+\f1\fs24 \uc0\u8232 
+\f4\fs20 END IF;
+\f1\fs24 \
+\uc0\u8232 
+\f4\fs20 IF En IS NOT NULL AND Sn IS NOT NULL THEN
+\f1\fs24 \uc0\u8232 
+\f4\fs20 \'a0 \'a0 \'a0 \'a0SELECT idTekija INTO AuthorID FROM Tekija WHERE Etunimi=En AND Sukunimi=Sn;
+\f1\fs24 \uc0\u8232 
+\f4\fs20 \'a0 \'a0 \'a0 IF AuthorID=0 then
+\f1\fs24 \uc0\u8232 
+\f4\fs20 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0INSERT INTO Tekija VALUES(NULL,En,Sn);
+\f1\fs24 \uc0\u8232 
+\f4\fs20 \'a0 \'a0 \'a0 \'a0 \'a0 SELECT LAST_INSERT_ID() INTO AuthorID;
+\f1\fs24 \uc0\u8232 
+\f4\fs20 \'a0 \'a0 \'a0END IF;
+\f1\fs24 \uc0\u8232 
+\f4\fs20 END IF;
+\f1\fs24 \
+
+\f4\fs20 SELECT COUNT(*) INTO TTID FROM Tekija_Teos WHERE idTekija=AuthorID AND idTeos=BookID;
+\f1\fs24 \uc0\u8232 
+\f4\fs20 IF TTID=0 then
+\f1\fs24 \uc0\u8232 
+\f4\fs20 \'a0 \'a0 \'a0 \'a0 \'a0INSERT INTO Tekija_Teos VALUES(AuthorID,BookID);
+\f1\fs24 \uc0\u8232 
+\f4\fs20 END IF;
+\f1\fs24 \
+\uc0\u8232 
+\f4\fs20 END
+\f1\fs24 \
+\
+B) 
+\f2\b Tee kirjastotietokantaan aliohjelma, joka lis\'e4\'e4 uuden lainaustapahtuman. Aliohjelmassa pit\'e4\'e4 suorittaa tarkastus sille, ett\'e4 kirja ei jo ole lainassa
+\f1\b0 \
+\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f4 \cf2 CREATE PROCEDURE `Uusi_Lainaus` (
+\f1 \uc0\u8232 
+\f4 IN En VARCHAR(45),
+\f1 \uc0\u8232 
+\f4 IN Sn VARCHAR(45),
+\f1 \uc0\u8232 
+\f4 IN Knimi VARCHAR(45)
+\f1 \uc0\u8232 
+\f4 )
+\f1 \
+\uc0\u8232 
+\f4 /*Aliohjelmasta ei voi poistua returnilla, ainoastaan funktiosta voi.
+\f1 \uc0\u8232 
+\f4 Tehd\'e4\'e4n loop label (Aliohjelma), jonka avulla poistutaan ohjelmalohkosta (t\'e4ss\'e4 koko aliohjelmasta)
+\f1 \uc0\u8232 
+\f4 */
+\f1 \
+\uc0\u8232 
+\f4 Aliohjelma:BEGIN
+\f1 \uc0\u8232 
+\f4 DECLARE N INT DEFAULT 0;
+\f1 \uc0\u8232 
+\f4 DECLARE M INT DEFAULT 0;
+\f1 \uc0\u8232 
+\f4 DECLARE CustID INT DEFAULT 0;
+\f1 \uc0\u8232 
+\f4 DECLARE BookID INT DEFAULT 0;
+\f1 \
+
+\f4 SELECT\'a0idAsiakas\'a0INTO CustID FROM\'a0Asiakas \'a0WHERE\'a0Sukunimi = Sn AND Etunimi = En;
+\f1 \
+
+\f4 IF CustID=0 THEN
+\f1 \uc0\u8232 
+\f4 \'a0 \'a0 \'a0SELECT 'Lainaajaa ei l\'f6ydy';
+\f1 \uc0\u8232 
+\f4 \'a0 \'a0 \'a0 LEAVE Aliohjelma;
+\f1 \uc0\u8232 
+\f4 END IF;
+\f1 \
+
+\f4 SELECT\'a0idTeos\'a0INTO BookID FROM\'a0Teos\'a0WHERE\'a0Knimi = Nimi;
+\f1 \
+
+\f4 IF BookID=0 THEN
+\f1 \uc0\u8232 
+\f4 \'a0 \'a0 SELECT 'Kirjaa ei l\'f6ydy';
+\f1 \uc0\u8232 
+\f4 \'a0 \'a0 LEAVE Aliohjelma;
+\f1 \uc0\u8232 
+\f4 END IF;
+\f1 \
+\uc0\u8232 
+\f4 SELECT\'a0k.idKirja\'a0INTO N FROM\'a0Teos t\'a0JOIN\'a0Kirja k ON t.idTeos = k.idTeos
+\f1 \uc0\u8232 
+\f4 LEFT JOIN\'a0Lainaus l ON l.idKirja = k.idKirja
+\f1 \uc0\u8232 
+\f4 WHERE\'a0t.idTeos = BookID\'a0AND (Palautettu=1\'a0OR Palautettu IS NULL)\'a0LIMIT 1;
+\f1 \uc0\u8232 \u8232 
+\f4 IF N=0 THEN\'a0
+\f1 \
+
+\f4 \'a0 \'a0 \'a0SELECT 'Kaikki kirjat lainassa';
+\f1 \
+
+\f4 \'a0 \'a0 \'a0LEAVE Aliohjelma;
+\f1 \uc0\u8232 
+\f4 END IF;
+\f1 \
+\uc0\u8232 
+\f4 INSERT INTO Lainaus VALUES (NULL,CURDATE(),DATE_ADD(CURDATE(),INTERVAL 30 DAY),CustID,N,FALSE);
+\f1 \uc0\u8232 \u8232 
+\f4 END
+\f1 \
+\
+C)
+\f3\b Tee kirjastotietokantaan aliohjelma, joka tulostaa kaikki my\'f6h\'e4ss\'e4 olevat kirjat ja niiden lainaajat.
+\f1\b0 \
+\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f4\fs20 \cf2 CREATE PROCEDURE `Myohassa` ()
+\f1\fs24 \uc0\u8232 
+\f4\fs20 BEGIN
+\f1\fs24 \uc0\u8232 
+\f4\fs20 SELECT Nimi,Sukunimi,Etunimi,PalautusPVM FROM Teos t JOIN Kirja k ON t.idTeos=k.idTeos
+\f1\fs24 \uc0\u8232 
+\f4\fs20 JOIN Lainaus l ON l.idKirja=k.idKirja
+\f1\fs24 \uc0\u8232 
+\f4\fs20 JOIN Asiakas a ON a.idAsiakas=l.idAsiakas
+\f1\fs24 \uc0\u8232 
+\f4\fs20 WHERE PalautusPVM < CURDATE() AND Palautettu=FALSE;
+\f1\fs24 \uc0\u8232 
+\f4\fs20 END\
+\
+D) 
+\f3\b\fs24 Tee opintorekisteritietokantaan aliohjelma, joka lis\'e4\'e4 uuden opintosuorituksen.\'a0
+\f1\b0 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\b \cf2 Sy\'f6tteeksi annetaan opiskelijan etunimi, sukunimi, kurssikoodi ja arvosana.
+\f4\b0\fs20 \
+\pard\pardeftab720\sa240\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f2\b \cf2 CREATE PROC
+\f4\b0 EDURE `UusiSuoritus` (
+\f1\fs24 \uc0\u8232 
+\f4\fs20 IN En VARCHAR(45),
+\f1\fs24 \uc0\u8232 
+\f4\fs20 IN Sn VARCHAR(45),
+\f1\fs24 \uc0\u8232 
+\f4\fs20 IN KK VARCHAR(45),
+\f1\fs24 \uc0\u8232 
+\f4\fs20 IN Arvos INT
+\f1\fs24 \
+
+\f4\fs20 )
+\f1\fs24 \uc0\u8232 
+\f4\fs20 Aliohjelma:BEGIN
+\f1\fs24 \uc0\u8232 
+\f4\fs20 DECLARE OpID INT DEFAULT 0;
+\f1\fs24 \uc0\u8232 
+\f4\fs20 DECLARE KID INT DEFAULT 0;
+\f1\fs24 \uc0\u8232 
+\f4\fs20 SELECT idOpiskelija INTO OpID FROM Opiskelija WHERE Etunimi=En AND Sukunimi=Sn;
+\f1\fs24 \uc0\u8232 \u8232 
+\f4\fs20 IF opID=0 THEN
+\f1\fs24 \uc0\u8232 
+\f4\fs20 \'a0 \'a0SELECT 'Opiskelijaa ei ole';
+\f1\fs24 \uc0\u8232 
+\f4\fs20 \'a0 \'a0LEAVE Aliohjelma;
+\f1\fs24 \uc0\u8232 
+\f4\fs20 END IF;
+\f1\fs24 \
+\uc0\u8232 
+\f4\fs20 SELECT idOpintojakso INTO KID FROM Opintojakso WHERE KK=koodi;
+\f1\fs24 \uc0\u8232 \u8232 
+\f4\fs20 IF KID=0 THEN
+\f1\fs24 \uc0\u8232 
+\f4\fs20 \'a0 \'a0SELECT 'Opintojaksoa ei ole';
+\f1\fs24 \uc0\u8232 
+\f4\fs20 \'a0 \'a0LEAVE Aliohjelma;
+\f1\fs24 \uc0\u8232 
+\f4\fs20 END IF;
+\f1\fs24 \
+\uc0\u8232 
+\f4\fs20 IF Arvos < 0 OR Arvos > 5 THEN
+\f1\fs24 \uc0\u8232 
+\f4\fs20 \'a0 \'a0SELECT 'Arvosana v\'e4\'e4rin';
+\f1\fs24 \uc0\u8232 
+\f4\fs20 \'a0 \'a0LEAVE Aliohjelma;
+\f1\fs24 \uc0\u8232 
+\f4\fs20 END IF;
+\f1\fs24 \uc0\u8232 
+\f4\fs20 INSERT INTO Arviointi VALUES (NULL,CURDATE(),Arvos,opID,KID);
+\f1\fs24 \uc0\u8232 \u8232 
+\f4\fs20 END
+\f1\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+\cf2 \
+E) 
+\f2\b\fs20 Tee opintorekisteritietokantaan aliohjelma, joka poistaa opiskelijan opintosuorituksen.\'a0Sy\'f6tteeksi annetaan opiskelijan nimi ja opintojakson koodi.\
+\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f4\b0 \cf2 CREATE PROCEDURE `PoistaSuoritus` (
+\f1\fs24 \
+
+\f4\fs20 IN En VARCHAR(45),
+\f1\fs24 \uc0\u8232 
+\f4\fs20 IN Sn VARCHAR(45),
+\f1\fs24 \uc0\u8232 
+\f4\fs20 IN KK VARCHAR(45)
+\f1\fs24 \uc0\u8232 
+\f4\fs20 )
+\f1\fs24 \uc0\u8232 
+\f4\fs20 Aliohjelma:BEGIN
+\f1\fs24 \uc0\u8232 
+\f4\fs20 DECLARE OpID INT DEFAULT 0;
+\f1\fs24 \uc0\u8232 
+\f4\fs20 DECLARE KID INT DEFAULT 0;
+\f1\fs24 \uc0\u8232 
+\f4\fs20 DECLARE AID INT DEFAULT 0;
+\f1\fs24 \
+\
+
+\f4\fs20 SELECT idOpiskelija INTO OpID FROM Opiskelija WHERE Etunimi=En AND Sukunimi=Sn;
+\f1\fs24 \
+\
+
+\f4\fs20 IF opID=0 THEN
+\f1\fs24 \uc0\u8232 
+\f4\fs20 SELECT 'Opiskelijaa ei ole';
+\f1\fs24 \uc0\u8232 
+\f4\fs20 LEAVE Aliohjelma;
+\f1\fs24 \uc0\u8232 
+\f4\fs20 END IF;
+\f1\fs24 \uc0\u8232 
+\f4\fs20 SELECT idOpintojakso INTO KID FROM Opintojakso WHERE KK=koodi;
+\f1\fs24 \
+\
+
+\f4\fs20 IF KID=0 THEN
+\f1\fs24 \uc0\u8232 
+\f4\fs20 SELECT 'Opintojaksoa ei ole';
+\f1\fs24 \uc0\u8232 
+\f4\fs20 LEAVE Aliohjelma;
+\f1\fs24 \uc0\u8232 
+\f4\fs20 END IF;
+\f1\fs24 \
+\
+
+\f4\fs20 SELECT idArviointi INTO AID FROM Arviointi WHERE idOpintojakso=KID AND idOpiskelija=OpID LIMIT 1;
+\f1\fs24 \
+\
+
+\f4\fs20 DELETE FROM Arviointi WHERE idOpiskelija=opID AND idOpintojakso=KID AND idArviointi=AID;
+\f1\fs24 \uc0\u8232 
+\f4\fs20 END
+\f1\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+\cf2 \
+\
+\
+}
